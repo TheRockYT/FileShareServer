@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Auth</title>
+</head>
+<body>
+<h1>Auth</h1>
+<p>Wrong password.</p>
+<input id="submit" type="submit" value="Try again."/>
+</body>
+<script defer>
+    document.getElementById("submit").addEventListener("click", (evt) => {
+        document.cookie = "password = ;";
+        document.location.reload();
+    });
+</script>
+</html>
