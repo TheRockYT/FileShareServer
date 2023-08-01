@@ -4,6 +4,10 @@
 
 FileShareServer is a simple file sharing server written in Kotlin. It is designed to be used in a local network.
 
+## Prerequisites
+
+- Java 17 or higher installed on you host computer.
+
 ## How to use FileShareServer?
 
 1. Download the latest release from the releases page.
