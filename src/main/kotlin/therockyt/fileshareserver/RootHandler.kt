@@ -7,6 +7,10 @@ import java.io.File
 class RootHandler : HttpHandler {
     override fun handle(exchange: HttpExchange) {
 
+        val query = exchange.requestURI.query
+
+        val methode = exchange.requestMethod
+
         val hostString = exchange.remoteAddress.hostName
 
         val responseBody = exchange.responseBody
@@ -30,6 +34,12 @@ class RootHandler : HttpHandler {
             val requestedFile = File(resourceFolder, path)
             if (requestedFile.exists()) {
                 if (requestedFile.isDirectory) {
+
+                    if(methode.equals("POST")){
+                        val postData = exchange.requestBody.readAllBytes()
+                        println(String(postData))
+                    }
+
                     var list = "<ul>"
                     var linkPath = path
                     if (!path.endsWith("/")) {
